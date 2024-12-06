@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <div class="card">
+        <div class="card-header bg-success">Colombia</div>
+        <input
+          type="text"
+          [(ngModel)]="country"
+          (ngModelChange)="onCountryChange()"
+        />
+      </div>
+    </div>
+    @if(countryFound){
+    <div class="col-2">
+      <H2>Pais: {{ countryFound?.name?.common }} </H2>
+      <p>currencies {{ countryFound?.region }}</p>
+      <p>capital {{ countryFound?.capital }}</p>
+      <p>capital {{ countryFound?.area }}</p>
+    </div>
+    }
+  </div>
+</div>
+<!--
+<google-map
+  *ngIf="latitude && longitude"
+  [center]="{ lat: latitude, lng: longitude }"
+  [zoom]="6"
+  height="400px"
+  width="100%"
+>
+</google-map>-->
